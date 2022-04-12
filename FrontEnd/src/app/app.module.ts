@@ -22,6 +22,8 @@ import { CategorylistComponent } from './categorylist/categorylist.component';
 import { UpdatearticleComponent } from './updatearticle/updatearticle.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoaderInterceptor } from './loader.interceptor';
+import { ApiPrefixInterceptor } from './api-prefix.interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { LoaderInterceptor } from './loader.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -50,6 +53,11 @@ import { LoaderInterceptor } from './loader.interceptor';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiPrefixInterceptor,
+      multi:true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptor,
