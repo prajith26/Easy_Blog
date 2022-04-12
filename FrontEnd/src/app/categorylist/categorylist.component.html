@@ -1,0 +1,60 @@
+<h3>{{category.article_category}}</h3>
+            <hr>
+            <div class="row main-row p-2" *ngFor="let element of catArticles">
+                <!-- <h4>All Articles</h4>
+                <hr> -->
+                <div class="col-lg-4 col-md-12 col-sm-12" >
+                    <div class="blog-img">
+                        <img [src]="element.article_image"
+                            alt="" class="img-fluid" style="width:auto;height:150px">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 mb-2">
+                            <ul class="list-group list-group-horizontal ul-cls">
+                                <li class="list-group-item">
+                                    <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="blog-title mb-3">
+                        <h3>{{element.article_title}}
+
+                            <span><i class="fa fa-pencil icon"  [routerLink]="['/home/updatePost']" [queryParams]="{id: element._id}"  aria-hidden="true" *ngIf="((auth.getUserName()==element.article_author)||auth.isAdmin())&&auth.loggedIn()"></i></span>
+                            <span ><i class="fa fa-trash icon" (click)="delete(element)" aria-hidden="true" *ngIf="((auth.getUserName()==element.article_author)||auth.isAdmin())&&auth.loggedIn()"></i></span>
+
+                            <small class="authorname">by {{element.article_author}}</small></h3>
+                        <span></span>
+                    </div>
+                    <div class="blog-date mb-2">
+                        <span>{{element.article_createdon | date:'fullDate'}}</span>
+                        <!-- <span>{{element.article_createdon | date}}</span> -->
+                        
+                    </div>
+                    <div class="blog-desc mb-2">
+                        <p>
+                            {{element.article_content}}
+                        </p>
+                    </div>
+                    <div class="blog-read-more mb-2">
+                        <span class="cat">{{element.article_category}}</span>
+                        <button class="btn btn-outline-dark" [routerLink]="['/home/single']" [queryParams]="{id: element._id}" >Read More</button>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                <br>
+                </div>
+                <hr>
+            </div>
+<button type="submit" class="btn btn-outline-dark" routerLink="/home">Back</button>

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-9 col-sm-9 col-lg-9">
+        <div class="container2" id="container2">
+            <br>
+
+            <!--  -->
+
+            <router-outlet></router-outlet>
+
+            <!--  -->
+
+            <!-- <hr> -->
+            <br>
+            <div class="row main-row"></div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-lg-3">
+        <div class="container1" id="container1">
+            <div class="menu" *ngIf="auth.loggedIn()">
+                <h4>Menu</h4>
+                <hr>
+                <div class="buttons">
+                    <!-- <a routerLink="/newpost">Create New Post</a> -->
+                    <button type="submit" class="btn" routerLink="/home/newpost" *ngIf="!auth.isRoot()">Create New
+                        Post</button>
+                    <hr>
+                    <button type="submit" class="btn" routerLink="/home/newcat" *ngIf="auth.isAdmin()">Create New
+                        Category</button>
+                    <!-- <hr> -->
+                    <button type="submit" class="btn" routerLink="/home/manageadmin" *ngIf="auth.isRoot()">Manage
+                        Admins</button>
+                    <hr>
+                </div>
+
+            </div>
+            <div class="category text-nowrap">
+                <h4>Categories</h4>
+                <hr>
+                <div *ngFor="let element of category" class="container mx-auto">
+
+                    <!-- <p [routerLink]="['/home/categorylist']" [queryParams]="{category_title: element.category_title}">{{element.category_title}}</p> -->
+                    <p (click)="selectCat(element.category_title)">{{element.category_title}}</p>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

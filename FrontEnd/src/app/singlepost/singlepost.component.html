@@ -1,0 +1,34 @@
+<div *ngIf="singleItem">
+    <div class="row">
+        <div class="col">
+            <h3>{{singleItem[0].article_title}}</h3>    
+        </div>
+        <div class="col-10 icons">
+            <span><i class="fa fa-pencil icon"  [routerLink]="['/home/updatePost']" [queryParams]="{id: singleItem[0]._id}"  aria-hidden="true" *ngIf="((auth.getUserName()==singleItem[0].article_author)||auth.isAdmin())&&auth.loggedIn()"></i></span>
+            <span ><i class="fa fa-trash icon" (click)="delete(singleItem[0]._id)" aria-hidden="true" *ngIf="((auth.getUserName()==singleItem[0].article_author)||auth.isAdmin())&&auth.loggedIn()"></i></span>        
+        </div>
+    </div>
+    <hr>
+    <div class="details">
+        <div class="cat category">
+            <span>{{singleItem[0].article_category}}</span>
+        </div>
+        <div class="cat date">
+            <small>{{singleItem[0].article_createdon | date:'fullDate'}} </small>
+        </div>
+        <div class="cat author">
+            <small class="authorname">by {{singleItem[0].article_author}}</small>
+        </div>
+        <!--  -->
+    </div>
+    
+    
+    <div class="blog-img">
+        <img [src]="singleItem[0].article_image"
+            alt="" class="img-fluid" style="width:auto;height:350px;">
+    </div>
+    <br>
+    <p class="txt">{{singleItem[0].article_content}}</p>
+    <br>
+    <button type="submit" class="btn btn-outline-dark" routerLink="/home">Back</button>
+</div>

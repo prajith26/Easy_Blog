@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row content">
+        <div class="col-md-12 contact-section">
+            <h2>Contact Us</h2>
+            <p>Email us and keep upto date with our latest news</p>
+        </div>
+        
+        <div class="col-md-6 mb-3 contact-form">
+            <i class="fa fa-map-marker"></i><span class="form-info">India</span><br>
+            <i class="fa fa-phone" > </i><span class="form-info">123-456-7890</span><br>
+            <i class="fa fa-envelope"></i><span class="form-info">easyBlog@gmail.com</span>
+            <img src="../../assets/Images/undraw_contact_us_15o2.svg" class="image" alt="">
+        </div>
+        <div class="col-md-6">
+            <form #aboutus="ngForm" (ngSubmit)="sendmsg()">
+                <input type="text" placeholder="Your Name*" class="form-control" required name="name" #name="ngModel" [(ngModel)]="Msg.name"><br>
+			    <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small> -->
+                <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">Name is required</div>
+                </div>
+                <input type="text" placeholder="Last Name (optional)"  class="form-control" name="Lname" #Lname="ngModel" [(ngModel)]="Msg.Lname"><br>
+                <input type="Email" placeholder="Email*" class="form-control" required name="email" #email="ngModel" [(ngModel)]="Msg.email" pattern="^([a-zA-Z0-9\.\-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$"><br>
+                <div *ngIf="email.errors && (email.invalid && email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">Email ID is required</div>
+                    <div *ngIf="email.errors.pattern">Invalid Email ID</div>
+                </div>
+                <input type="text" placeholder="Subject of this message*" class="form-control" required name="subject" #subject="ngModel" [(ngModel)]="Msg.subject"><br>
+                <div *ngIf="subject.touched && subject.invalid" class="alert alert-danger">
+                    <div *ngIf="subject.errors.required">Subject is required</div>
+                </div>
+                <textarea placeholder="Message*" rows="5"  class="form-control" required name="message" #message="ngModel" [(ngModel)]="Msg.message"></textarea><br>
+                <div *ngIf="message.touched && message.invalid" class="alert alert-danger">
+                    <div *ngIf="message.errors.required">Message is required</div>
+                </div>
+                <button class="submit btn btn-class" [disabled]="!aboutus.form.valid" >Send Message</button> 
+            </form > 
+        </div>
+        <div><br></div>
+        <div class="col-md-12 response alert alert-success alert-dismissible fade show" role="alert" *ngIf="show">
+            <span>Thank you, {{Msg.name}} for contacting us. We get in touch with you soon.</span>  
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="reload()"></button>
+        </div>
+    </div>
+</div>

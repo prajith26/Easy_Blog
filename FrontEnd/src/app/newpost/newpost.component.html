@@ -1,0 +1,49 @@
+<h3>New Article</h3>
+<hr>
+<form class="form" id="form" [formGroup]="postForm" (ngSubmit)="addPost()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Blog Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title " [(ngModel)]="postItem.article_title" name="name" formControlName="name" required>
+    </div>
+    <div *ngIf="af.name.touched && af.name.invalid" class="alert alert-danger">
+        <div *ngIf="af.name.errors.required">Blog Title is required</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Author</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="postItem.article_author" name="author" formControlName="author" required disabled>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label" style="margin-right:10px;">Blog Category </label>
+        <select id="cats" [(ngModel)]="postItem.article_category" name="category" formControlName="category" required >
+        
+            <option *ngFor="let element of category"value="{{element.category_title}}">{{element.category_title}}</option>
+
+        </select>
+    </div>
+    <div *ngIf="af.category.touched && af.category.invalid" class="alert alert-danger">
+        <div *ngIf="af.category.errors.required">Blog Category is required</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Blog Content</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="postItem.article_content" name="content" formControlName="content" required></textarea>
+    </div>
+    <div *ngIf="af.content.touched && af.content.invalid" class="alert alert-danger">
+        <div *ngIf="af.content.errors.required">Blog Content is required</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Select Image</label>
+        <input class="form-control" type="file" id="formFile" class="form-control"  accept="image/*"
+        (change)="onSelectImage($event)" name="imageurl"
+        formControlName="imageurl" >
+    </div>
+    <br>
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <button type="submit" class="btn btn-success" [disabled]="postForm.invalid">Submit</button>
+    </div>
+</form>
+<br>
+<button type="submit" class="btn btn-outline-dark" routerLink="/home" style="float: right;">Back</button>

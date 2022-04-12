@@ -1,0 +1,81 @@
+.authorname{
+    font-weight: lighter;
+    font-size: 16px;
+    margin-left: 24px;
+}
+
+.blog-img{
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.txt{
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/* .cat{
+    margin-right: 520px;
+    margin-left: 10px;
+    font-size: 16px;
+} */
+h3{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.btn{
+    float: right;
+}
+
+.icons{
+    letter-spacing: 8px;
+    margin-top: 6px;
+    font-size:15px;
+}
+.fa-pencil {
+    cursor: pointer;
+
+}
+.fa-pencil:hover{
+    color: rgb(42, 185, 42);
+}
+
+.fa-trash{
+    cursor: pointer;
+}
+
+.fa-trash:hover{
+    color: red;
+}
+
+.details{
+     
+  display: flex;
+  justify-content: flex-start;
+    
+}
+
+.cat{
+    padding-right: 45px;
+    padding-left: 10px;
+}
+.category{
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 20px;
+    color: rgb(124, 24, 24);
+}
+
+.date{
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+.author{
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* justify-self:right; */
+}

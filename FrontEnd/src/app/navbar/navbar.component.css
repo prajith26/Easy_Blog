@@ -1,0 +1,12 @@
+.navbar-brand{
+    font-family: 'Architects Daughter', cursive;
+    transform: scale(1.7);
+    margin-left: 2rem;
+}
+nav{
+    height: 75px;
+}
+
+.navbar-style{
+    box-shadow: 0 5px 10px #00000057;
+}

@@ -1,0 +1,16 @@
+.fa-pencil{
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.fa-pencil:hover{
+    color: rgb(42, 185, 42);
+}
+
+.fa-trash{
+    cursor: pointer;
+}
+
+.fa-trash:hover{
+    color: red;
+}

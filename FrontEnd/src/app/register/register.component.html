@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row content">
+        <div class="col-md-6 mb-3">
+            <img src="../../assets/Images/undraw_exams_g4ow.svg" class="img-fluid" alt="image">
+        </div>
+        <div class="col-md-6">
+            <h3 class="signin-text mb-3">Register</h3>
+            <form (ngSubmit)="userRegister()" #registerForm="ngForm">
+                <div class="form-group mb-3">
+                    <label for="email">Name</label>
+                    <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="userData.name" pattern="^[a-zA-Z]+$" required/>
+                </div>
+                <div *ngIf="name.errors && (name.invalid && name.touched)">
+                    <small class="text-danger" *ngIf="name.errors.required">Name is Required</small>
+                    <small class="text-danger" *ngIf="name.errors.pattern">Name should contain characters only. Space not allowed</small>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" #email="ngModel" [(ngModel)]="userData.email" pattern="^([a-zA-Z0-9\.\-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$" required>
+                </div>
+                <div *ngIf="email.errors && (email.invalid && email.touched)">
+                    <small class="text-danger" *ngIf="email.errors.required">Email ID is required</small>
+                    <small class="text-danger" *ngIf="email.errors.pattern">Invalid Email ID</small>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" #password="ngModel" [(ngModel)]="userData.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                </div>
+                <div *ngIf="password.errors && (password.invalid && password.touched)">
+                    <small class="text-danger" *ngIf="password.errors.required" >Password is Required</small>
+                    <small class="text-danger" *ngIf="password.errors.pattern" >Invalid Password. Please Note:-Password should contain minimum 8 characters. It should contain atleast 1 lower case,1 uppercase,1 number and 1 special character</small>
+                </div>
+
+                <div class="form-group form-check mb-3">
+                    <input type="checkbox" name="checkbox" class="form-check-input" id="checkbox" #checkbox="ngModel" [(ngModel)]="userData.checkbox" required>
+                    <label class="form-check-label" for="checkbox">I agree to the Terms and Conditions</label>
+                </div>
+                <div *ngIf="checkbox.errors && (checkbox.invalid && checkbox.touched)">
+                    <small class="text-danger" *ngIf="checkbox.errors.required" >Please agree to the T&C to register</small>
+                </div>
+
+                <button type="submit" class="btn btn-class" [disabled]="!registerForm.form.valid">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

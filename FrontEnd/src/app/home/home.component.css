@@ -1,0 +1,119 @@
+.container2{
+    background-color: white ;
+    min-width: 200px;
+    width: 900px;
+    height: auto;
+    /* position: relative; */
+    margin-left: 50px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    padding: 0 20px;
+}
+
+.main-row{
+    margin: 8%;
+    background-color: rgba(255, 248, 220, 0.664);
+    box-shadow: 0 0 10px 10px rgba(0,0,0,.05);
+    border-radius: 0.5rem;
+    /* margin-top: 0px; */
+   
+}
+
+.blog-img > img{
+    width: 100%;
+    height: 100%;
+    transform: translateY(-20px);
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
+}
+
+.blog-date span{
+    color: #962c51;
+}
+
+.ul-cls{
+    justify-content: center;
+}
+.ul-cls li{
+    cursor: pointer;
+}
+
+.blog-title > h2{
+    font-style: normal;
+    font-weight: 400;
+}
+.blog-desc > p{
+    font-style: normal;
+    line-height:2;
+
+}
+
+
+.container1{
+    background-color: white ;
+    /* min-width: 200px; */
+    width: 290px;
+    height: auto;
+    min-height: 1200px;
+    /* position: relative; */
+    /* margin-left: 50px; */
+    margin-top: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.container1 h4{
+    padding-top: 25px;
+    padding-left: 10px;
+    font-family: 'Poppins';
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.container1 hr{
+    width: 250px;
+    margin:auto
+}
+
+.menu{
+    margin-top: auto;
+}
+
+.btn{
+    margin-left: 30px;
+    text-decoration: none;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+.btn:focus{
+    outline: none !important;
+}
+.btn:hover{
+    color: rgb(0, 38, 255);
+}
+
+/* .category p{
+    overflow-wrap: break-word;
+} */
+
+.container p{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 470;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.container p:hover{
+    color: rgb(0, 38, 255);
+}
+
+.category{
+    padding-bottom: 35px;
+}

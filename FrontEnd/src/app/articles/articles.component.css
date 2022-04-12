@@ -1,0 +1,72 @@
+.blog-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.authorname{
+    font-weight: lighter;
+    font-size: 16px;
+    margin-left: 24px;
+}
+
+.btn{
+    /* margin-left: 360px; */
+    float: right;
+}
+.cat{
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 20px;
+    color: rgb(124, 24, 24);
+}
+
+.main-row {
+    margin-bottom: 10px;
+}
+
+.icon{
+    line-height: inherit;
+    font-size: 15px;
+    padding: 4px;
+}
+.fa-pencil {
+    cursor: pointer;
+
+}
+.fa-pencil:hover{
+    color: rgb(42, 185, 42);
+}
+
+.fa-trash{
+    cursor: pointer;
+}
+
+.fa-trash:hover{
+    color: red;
+}
+.fa-twitter {
+    cursor: pointer;
+}
+.fa-twitter:hover {
+    color: rgb(0, 195, 255);
+}
+.fa-facebook {
+    cursor: pointer;
+}
+.fa-facebook:hover {
+    color: #3b5998;
+}
+.fa-whatsapp {
+    cursor: pointer;
+}
+.fa-whatsapp:hover{
+    color: #25D366;
+}
+.fa-instagram {
+    cursor: pointer;
+}
+.fa-instagram:hover {
+    color: #cd486b;
+}
